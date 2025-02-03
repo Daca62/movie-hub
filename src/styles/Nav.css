@@ -1,0 +1,32 @@
+.nav {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5px;
+  padding-left: 20px;
+  overflow-x: scroll;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.nav {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.nav__item {
+  margin-left: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: transform 100ms ease-out;
+}
+
+.nav__item:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
