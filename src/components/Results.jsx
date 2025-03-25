@@ -7,16 +7,30 @@ import { SearchContext } from "../pages/Home";
 
 function Results({ selected }) {
   const [movies, setMovies] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
   const searchMovie = useContext(SearchContext);
   // console.log(searchMovie.results);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await axios.get(selected);
-      setMovies(response.data.results);
-      // console.log(response);
-      return response;
+      // setIsLoading(true);
+      try {
+        const response = await axios.get(selected);
+        const data = await response.data.results;
+        console.log(data);
+        setMovies(data);
+        // setIsLoading(false);
+        return response;
+      } catch (error) {
+        throw new Error(
+          error.message ||
+            "Failed fetching the movies, Please reload the page and try again..."
+        );
+      }
     }
+
+    // console.log(response);
+
     fetchData();
   }, [selected]);
 
@@ -26,7 +40,8 @@ function Results({ selected }) {
 
   return (
     <div className="results">
-      {movies.map((item) => (
+      {/* {isLoading && <h2>Loading content, please wait...</h2>} */}
+      {movies?.map((item) => (
         <MovieCard movie={item} key={item.id} />
       ))}
       {/* {movies.map((item) => (
