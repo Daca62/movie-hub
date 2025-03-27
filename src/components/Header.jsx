@@ -5,6 +5,7 @@ import FlashOnIcon from "@mui/icons-material/FlashOn";
 import SearchInput from "./SearchInput";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
 import fetchMovies from "../api/fetchMovies";
+import { Link } from "react-router-dom";
 // import { useNavigate } from "react-router-dom";
 
 function Header({ setSelected, setSearchResult }) {
@@ -17,7 +18,9 @@ function Header({ setSelected, setSearchResult }) {
           className="header__leftBtn"
           onClick={() => setSelected(fetchMovies.fetchActionMovies)}
         >
-          <HomeIcon />
+          <Link to="/">
+            <HomeIcon />
+          </Link>
           <p>Home</p>
         </div>
         <div

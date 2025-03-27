@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 100vh;
+  /* overflow: none; */
+  flex-wrap: wrap;
+}
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.img-container > h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 20px;
+}
+.movie-poster {
+  cursor: pointer;
+  max-height: 300px;
+  max-width: 500px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+.info-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 4rem;
+  padding: 0 2rem;
+}
+
+.movie-description {
+  margin: 20px 50px;
+}
