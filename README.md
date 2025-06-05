@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 
 # Link
-movie-hub-nu-inky.vercel.app
+https://movie-hub-nu-inky.vercel.app/
